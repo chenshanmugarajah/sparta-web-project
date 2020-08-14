@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA API</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <script src="./assets/js/main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>NASA Mission</h1>
+            <h3>Information gathered using the NASA image api displayed</h3>
+            <p>Vanilla CSS and JS</p>
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nasa-missions.html">Missions</a></li>
+            </ul>
+        </div>
+
+        
+
+        <div id="searchDiv">
+           <input type="text" placeholder="What do you want to find?.." id="searchQuery">
+           <button type="submit" id="submitSearch">SEARCH</button> 
+        </div>
+
+        <div id="nasa-info">
+
+        </div>
+
+    </div>
+        
+    <style>
+        #searchDiv input {
+            height : 30px;
+            width: 250px;
+            border-radius: 7px;
+            padding: 10px;
+        }
+
+        #searchDiv button {
+            height: 50px;
+            padding: 10px;
+            border-radius: 7px;
+            background-color: white;
+            color: black;
+            font-family: 'Space Mono', monospace;
+            letter-spacing: 2px;
+        }
+
+        #searchDiv button:hover {
+            background-color: rgb(211, 211, 211);
+        }
+
+    </style>
+</body>
+</html>
