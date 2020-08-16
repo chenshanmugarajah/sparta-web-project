@@ -1,6 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    display: grid;
+    font-family: Montseratt, sans-serif;
     background-color: #f4f4f4;
-    background-image: none;
-    color: #2e2e2e;
+
+}
+
+.container {
+    display: grid;
+    grid-template-rows:  1fr 100px;
+    grid-template-columns: 500px 1fr 1fr;
+    grid-template-areas: "nav content content"
+                         "footer footer footer";
+    height: 100vh;
+
+}
+
+#left {
+    grid-area: nav;
+    border-right: 3px solid black;
+}
+
+.nav ul svg {
+    margin: 20px;
+}
+
+.nav ul svg text {
+    fill: transparent;
+    stroke-width: .05;
+    stroke: #fff;
+    transition: fill 2s;
+    font-size: 2px;
+    text-anchor: middle;
+    text-shadow: none;
+    transition: fill 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+    font-family: BoomerTantrum-j88y, sans-serif;
+}
+
+.nav ul svg text:hover {
+    fill: rgb(36, 36, 36);
+    text-shadow: 2px 2px 8px #afafaf;
+}
+
+
+#right {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "div1 div4 div7 div8"
+                         "div1 div5 div5 div9"
+                         "div2 div5 div5 div10"
+                         "div3 div3 div6 div10";
+}
+
+.news img {
+    height: 100px;
+    width: 100px;
+}
+
+#news1 {
+    grid-area: div1;
+    background-color: red;
+}
+
+#news2 {
+    grid-area: div2;
+    background-color: pink;
+}
+
+#news3 {
+    grid-area: div3;
+    background-color: rgb(255, 213, 97);
+}
+
+#news4 {
+    grid-area: div4;
+    background-color: rgb(208, 255, 0);
+}
+
+#news5 {
+    grid-area: div5;
+    background-color: rgb(0, 255, 0);
+}
+
+#news6 {
+    grid-area: div6;
+    background-color: red;
+}
+
+#news7 {
+    grid-area: div7;
+    background-color: rgb(0, 174, 255);
+}
+
+#news8 {
+    grid-area: div8;
+    background-color: rgb(25, 0, 255);
+}
+
+#news9 {
+    grid-area: div9;
+    background-color: rgb(255, 0, 234);
+}
+
+#news10 {
+    grid-area: div10;
+    background-color: rgb(0, 238, 255);
+}
+
+
+#footer {
+    grid-area: footer;
+    background-color: violet;
 }

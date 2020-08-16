@@ -11,7 +11,7 @@ window.onload = () => {
             return;
         }
         response.json().then(function(data) {
-            handleResponse(data);
+            displayNews(data);
         });
         }
     )
@@ -20,11 +20,44 @@ window.onload = () => {
     });
 }
 
-var handleResponse = (data) => {
-    var dataArr = data.docs;
-    console.log(dataArr)
+var displayNews = (data) => {
+    
+    var allNews = new Array(data.docs);
+
+    for (let i=0; i<10; i++){
+
+        var news = allNews[0][i];
+        var newsBlock = document.getElementById("news" + (i+1));
+        var title = document.createElement('h1');
+        title.innerHTML = news.title;
+        var author = document.createElement('p');
+        author.innerHTML = "By " + news.news_site_long + " on " + unixToDate(news.date_published);
+        var img = document.createElement('img');
+        img.src = news.featured_image;
+        var link = document.createElement('a');
+        link.innerHTML = "Find out more"
+        link.href = news.url;
+        link.target = "_blank"
+
+        newsBlock.appendChild(title);
+        newsBlock.appendChild(author);
+        // newsBlock.appendChild(img);
+        newsBlock.appendChild(link);
+
+    }
 }
 
 var randomNumberBetween = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
+}
+
+var unixToDate = (unix_timestamp) => {
+
+    var date = new Date(unix_timestamp * 1000);
+
+    var day = date.getDay();
+    var month = date.getMonth();
+    var year = date.getFullYear();
+    
+    return day + "/" + month + "/" + year;
 }
