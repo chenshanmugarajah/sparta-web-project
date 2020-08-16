@@ -11,8 +11,8 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows:  1fr 100px;
-    grid-template-columns: 500px 1fr 1fr;
+    grid-template-rows:  1fr auto;
+    grid-template-columns: 400px 1fr 1fr;
     grid-template-areas: "nav content content"
                          "footer footer footer";
     height: 100vh;
@@ -20,8 +20,9 @@ body {
 }
 
 #left {
+    margin: auto 0;
     grid-area: nav;
-    border-right: 3px solid black;
+    /* border-right: 3px solid black; */
 }
 
 .nav ul svg {
@@ -45,7 +46,6 @@ body {
     text-shadow: 2px 2px 8px #afafaf;
 }
 
-
 #right {
     grid-area: content;
     display: grid;
@@ -57,6 +57,24 @@ body {
                          "div3 div3 div6 div10";
 }
 
+.news {
+    padding: 10px;
+    font-size: 15px;
+    border: 3px solid rgba(167, 167, 167, 0.479);
+    border-style:dashed;
+    transition: color 0.2s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.news a {
+    color: inherit;
+    font-weight: 600;
+}
+
+.news:hover {
+    color: rgb(240, 249, 255);
+    background-color: rgba(0, 0, 0, 0.445);
+}
+
 .news img {
     height: 100px;
     width: 100px;
@@ -64,56 +82,61 @@ body {
 
 #news1 {
     grid-area: div1;
-    background-color: red;
+    /* background-color: red; */
+    font-size: 1.3rem;
 }
 
 #news2 {
     grid-area: div2;
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 #news3 {
     grid-area: div3;
-    background-color: rgb(255, 213, 97);
+    /* background-color: rgb(255, 213, 97); */
+    font-size: 1.4rem;
 }
 
 #news4 {
     grid-area: div4;
-    background-color: rgb(208, 255, 0);
+    /* background-color: rgb(208, 255, 0); */
 }
 
 #news5 {
     grid-area: div5;
-    background-color: rgb(0, 255, 0);
+    /* background-color: rgb(0, 255, 0); */
+    font-size: 2.5rem;
 }
 
 #news6 {
     grid-area: div6;
-    background-color: red;
+    /* background-color: red; */
 }
 
 #news7 {
     grid-area: div7;
-    background-color: rgb(0, 174, 255);
+    /* background-color: rgb(0, 174, 255); */
+    font-size: 1.1rem;
 }
 
 #news8 {
     grid-area: div8;
-    background-color: rgb(25, 0, 255);
+    /* background-color: rgb(25, 0, 255); */
 }
 
 #news9 {
     grid-area: div9;
-    background-color: rgb(255, 0, 234);
+    /* background-color: rgb(255, 0, 234); */
 }
 
 #news10 {
     grid-area: div10;
-    background-color: rgb(0, 238, 255);
+    /* background-color: rgb(0, 238, 255); */
+    font-size: 1.4rem;
 }
-
 
 #footer {
     grid-area: footer;
-    background-color: violet;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
 }

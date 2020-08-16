@@ -61,3 +61,14 @@ var unixToDate = (unix_timestamp) => {
     
     return day + "/" + month + "/" + year;
 }
+
+document.querySelectorAll('.news').forEach(news => news.addEventListener("click", () => {
+    var text = news.innerText;
+    var msg = new SpeechSynthesisUtterance();
+    msg.rate = 0.8;
+    msg.pitch = 0;
+    msg.text = text;
+
+    speechSynthesis.speak(msg);
+
+}))
