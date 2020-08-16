@@ -6,7 +6,6 @@
     <title>NASA API</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
-    <script src="./assets/js/main.js"></script>
     <title>Space News</title>
 </head>
 <body onload="followMouse();">
@@ -27,46 +26,27 @@
             </ul>
         </div>
 
+        <div class="news-container">
+
+        </div>
+
 
     </div>
     
     <style>
         
-        .container {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            /* overflow: hidden; */
-            cursor: none;
+        body {
+            background-color: #f4f4f4;
+            background-image: none;
+            color: #2e2e2e;
         }
 
-        #ball {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border: 2px solid grey;
-            transition: 0.1s;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            pointer-events: none;
+        .news-item {
+            border: 1px dashed #2e2e2e;
+            margin: 5px;
+            padding: 10px;
         }
 
-        .header:hover ~ #ball {
-            width: 60px;
-            height: 60px;
-            border: 10px solid transparent;
-            border-image: url(./assets/images/planets/rocket.png) 30 round;
-            animation: animate 5s linear infinite;
-        }
-
-        @keyframes animate {
-            0% {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-            100% {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
     </style>
 
     <script defer>
@@ -78,18 +58,22 @@
             .then(
                 function(response) {
                 if (response.status !== 200) {
-                    console.log('Looks like there was a problem. Status Code: ' +
-                    response.status);
+                    console.log('Looks like there was a problem. Status Code: ' + response.status);
                     return;
                 }
                 response.json().then(function(data) {
-                    handleResponse(data.collection.items)
+                    handleResponse(data);
                 });
                 }
             )
             .catch(function(err) {
-                console.log('Fetch Error :-S', err);
+                console.log('Fetch Error mate: ', err);
             });
+        }
+
+        var handleResponse = (data) => {
+            var dataArr = data.docs;
+            console.log(dataArr)
         }
 
         function randomNumberBetween(min, max) {
