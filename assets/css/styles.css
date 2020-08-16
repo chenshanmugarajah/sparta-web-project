@@ -28,16 +28,27 @@ body {
     list-style: none;
     margin: 10px 30px;
     display: inline;
+    width: 200px;
 }
 
 .nav a {
     color: black;
     text-decoration: none;
     padding: 5px 10px;
+    transition: color 1s
 }
 
 .nav a:hover {
-    background-color: rgba(0, 0, 0, 0.281);
+    color: red;
+    cursor: none;
+}
+
+.nav a:hover::after{
+    content: " <";
+}
+
+.nav a:hover::before{
+    content: "> ";
 }
 
 .planets {
