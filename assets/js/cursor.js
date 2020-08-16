@@ -1,7 +1,5 @@
 console.log("Cursor JS loaded")
 
-// window.onload = 
-
 var ball = document.getElementById('ball')
 
 document.addEventListener('mousemove', function (e) {

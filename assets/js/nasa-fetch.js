@@ -1,9 +1,10 @@
+console.log("Nasa Fetch JS loaded")
 
 var randomNumberBetween = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-var searchNasa = (query, targetDiv, page) => {
+var searchNasa = (query) => {
 
     fetch("https://images-api.nasa.gov/search?q=" + query)
     .then(
@@ -14,7 +15,7 @@ var searchNasa = (query, targetDiv, page) => {
             return;
         }
         response.json().then(function(data) {
-            displayData(data.collection.items, targetDiv, page)
+            displayData(data.collection.items)
         });
         }
     )
@@ -24,7 +25,7 @@ var searchNasa = (query, targetDiv, page) => {
 
 }
 
-var displayData = (data, targetDiv, page) => {
+var displayData = (data) => {
     var rand = randomNumberBetween(20, 50)
     var selectedData = data[rand].data[0]
     var nasaId = selectedData.nasa_id
@@ -33,7 +34,6 @@ var displayData = (data, targetDiv, page) => {
     var date_created = selectedData.date_created.split("T");
     var img = data[rand].links[0].href
 
-    if (page == "homepage") {
-        document.querySelector(targetDiv).innerHTML = `<h1>${nasaId}: ${title}<h1/><h3>${desc}<h3/><img src=${img} class="modal-img"><p>Date created: ${date_created[0]}<p/>`;
-    }
+    document.getElementById('planet-info').innerHTML = `<h1>${nasaId}: ${title}<h1/><h3>${desc}<h3/><img src=${img} class="modal-img"><p>Date created: ${date_created[0]}<p/>`;
+
 }
