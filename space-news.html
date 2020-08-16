@@ -4,82 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA API</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
     <title>Space News</title>
+    <script src="./assets/js/news.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/news.css">
 </head>
-<body onload="followMouse();">
-    <div class="container" id="index-page">
+<body>
+    <div class="container" >
 
-        
-        <div class="header">
-            <h3>SPACE NEWS API</h3>
+        <div id="left">
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="nasa-missions.html">Missions</a></li>
+                    <li><a href="space-game.html">Space Game</a></li>
+                    <li><a href="space-news.html">Space News</a></li>
+                </ul>
+            </div>
         </div>
-        
-        
-        <div class="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="nasa-missions.html">Missions</a></li>
-                <li><a href="space-game.html">Space Game</a></li>
-                <li><a href="space-news.html">Space News</a></li>
-            </ul>
+    
+        <div id="right">
+            <h1>Content</h1>
         </div>
-
-        <div class="news-container">
-
-        </div>
-
 
     </div>
-    
-    <style>
-        
-        body {
-            background-color: #f4f4f4;
-            background-image: none;
-            color: #2e2e2e;
-        }
 
-        .news-item {
-            border: 1px dashed #2e2e2e;
-            margin: 5px;
-            padding: 10px;
-        }
-
-    </style>
-
-    <script defer>
-
-        var url = "https://spaceflightnewsapi.net/api/v1/articles?search="
-
-        window.onload = () => {
-            fetch(url + "space")
-            .then(
-                function(response) {
-                if (response.status !== 200) {
-                    console.log('Looks like there was a problem. Status Code: ' + response.status);
-                    return;
-                }
-                response.json().then(function(data) {
-                    handleResponse(data);
-                });
-                }
-            )
-            .catch(function(err) {
-                console.log('Fetch Error mate: ', err);
-            });
-        }
-
-        var handleResponse = (data) => {
-            var dataArr = data.docs;
-            console.log(dataArr)
-        }
-
-        var randomNumberBetween = (min, max) => {
-            return Math.floor(Math.random() * (max - min)) + min;
-        }
-
-    </script>
 </body>
 </html>
