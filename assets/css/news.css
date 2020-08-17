@@ -23,6 +23,7 @@ body {
     margin: auto 0;
     grid-area: nav;
     /* border-right: 3px solid black; */
+    
 }
 
 .nav ul svg {
@@ -72,7 +73,8 @@ body {
 
 .news:hover {
     color: rgb(240, 249, 255);
-    background-color: rgba(0, 0, 0, 0.445);
+    background-color: rgba(0, 0, 0, 0.548);
+    cursor: pointer;
 }
 
 .news img {
@@ -139,4 +141,6 @@ body {
     grid-area: footer;
     text-align: center;
     color: rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(167, 167, 167, 0.479);
+    border-style:dashed;
 }
